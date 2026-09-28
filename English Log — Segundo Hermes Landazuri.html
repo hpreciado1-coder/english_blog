@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Segundo Hermes Landazuri — English Log</title>
+<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#12121c; --bg2:#181826; --panel:#1e1e30; --line:#2c2c44;
+  --ink:#eceaf6; --muted:#9391b5;
+  --l1:#6ee7a8; --l2:#63b3f0; --l3:#fb9b5b; --l4:#f2748a; --extra:#c58cf2;
+  --font-d:'Press Start 2P',monospace; --font-b:'Space Grotesk',sans-serif;
+  padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+  box-sizing:border-box;
+}
+*{box-sizing:border-box}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--font-b);line-height:1.5}
+img{max-width:100%}
+a{color:inherit}
+.wrap{max-width:920px;margin:0 auto;padding:0 20px}
+
+/* HERO */
+header.hero{padding:56px 0 40px;border-bottom:1px solid var(--line);
+  background:radial-gradient(circle at 15% 0%, #24243a 0%, var(--bg) 60%)}
+.tag{font-family:var(--font-d);font-size:10px;color:var(--l3);letter-spacing:1px}
+h1{font-family:var(--font-d);font-size:clamp(20px,4vw,32px);line-height:1.5;margin:14px 0 6px;
+  text-shadow:3px 3px 0 var(--l1)}
+.role{color:var(--muted);font-size:16px;max-width:60ch}
+.hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:26px}
+.vidbtn{display:inline-flex;align-items:center;gap:10px;background:var(--panel);
+  border:1px solid var(--line);border-radius:10px;padding:10px 16px;text-decoration:none;
+  color:var(--ink);font-size:14px;transition:border-color .15s}
+.vidbtn:hover{border-color:var(--l3)}
+.vidbtn svg{flex:none}
+
+/* NAV */
+nav.levels{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--bg);
+  border-bottom:1px solid var(--line);overflow-x:auto}
+nav.levels .wrap{display:flex;gap:8px;padding:12px 20px}
+nav.levels button{font-family:var(--font-b);font-weight:700;font-size:14px;white-space:nowrap;
+  background:transparent;border:1px solid var(--line);color:var(--muted);border-radius:20px;
+  padding:8px 16px;cursor:pointer}
+nav.levels button.on{color:#12121c;border-color:transparent}
+
+/* SECTIONS */
+section.level{padding:44px 0;border-bottom:1px solid var(--line)}
+section.level h2{font-family:var(--font-d);font-size:16px;margin:0 0 4px}
+section.level .sub{color:var(--muted);font-size:14px;margin-bottom:24px}
+.lesson{margin-bottom:34px}
+.lesson h3{font-size:18px;margin:0 0 12px;padding-left:12px;border-left:3px solid var(--c,var(--l1))}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:14px}
+
+/* FLIP CARD */
+.card{perspective:1000px;height:110px;cursor:pointer}
+.card .inner{position:relative;width:100%;height:100%;transition:transform .5s;transform-style:preserve-3d}
+.card.flip .inner{transform:rotateY(180deg)}
+.face{position:absolute;inset:0;backface-visibility:hidden;border-radius:10px;
+  border:2px solid var(--c,var(--l1));background:var(--panel);padding:14px;display:flex;
+  align-items:center;font-size:14px;overflow:auto;color:var(--ink)}
+.face.back{transform:rotateY(180deg);background:var(--c,var(--l1));color:#141220;font-weight:600}
+.face .lbl{position:absolute;top:6px;right:10px;font-size:9px;color:var(--muted);font-family:var(--font-d)}
+.face.back .lbl{color:#141220;opacity:.55}
+
+/* VIDEO CARD IN LESSON */
+.vcard{display:flex;align-items:center;gap:12px;background:linear-gradient(135deg,#20203a,#171724);
+  border:1px solid var(--c,var(--l1));border-radius:10px;padding:14px 16px;margin-bottom:16px;
+  text-decoration:none;color:var(--ink)}
+.vcard svg{flex:none}
+.vcard b{display:block;font-size:14px}
+.vcard span{color:var(--muted);font-size:12px}
+
+/* EMBEDDED VIDEO */
+.vid{position:relative;padding-top:56.25%;border-radius:10px;overflow:hidden;
+  border:1px solid var(--c,var(--l1));margin-bottom:16px;background:#000}
+.vid iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.vid-cap{font-size:12px;color:var(--muted);margin:-10px 0 16px}
+.hero-videos{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px;margin-top:26px}
+
+footer{padding:34px 20px;text-align:center;color:var(--muted);font-size:13px}
+
+@media (prefers-color-scheme:light){
+  :root:not([data-theme="dark"]){--bg:#f3f2fa;--bg2:#fff;--panel:#fff;--line:#ded9f0;--ink:#221f33;--muted:#6a678a}
+  h1{text-shadow:3px 3px 0 var(--l1)}
+}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap">
+    <div class="tag">▸ STUDENT PROFILE — SENA</div>
+    <h1>Segundo Hermes<br>Landazuri Preciado</h1>
+    <p class="role">Student of Video Game Development and Interactive Environments. This is my English learning log: every sentence I've practiced during my training, organized by level, in cards you can flip.</p>
+    <div class="hero-actions">
+      <a class="vidbtn" href="https://youtu.be/5Npxg7vLkhM" target="_blank" rel="noopener">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" stroke="#6ee7a8" stroke-width="2"/><path d="M10 8l6 4-6 4V8z" fill="#6ee7a8"/></svg>
+        Introduction — my presentation
+      </a>
+      <a class="vidbtn" href="https://youtu.be/iCPIQSEtTAs" target="_blank" rel="noopener">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" stroke="#fb9b5b" stroke-width="2"/><path d="M10 8l6 4-6 4V8z" fill="#fb9b5b"/></svg>
+        Video game development — introduction
+      </a>
+    </div>
+  </div>
+</header>
+
+<nav class="levels"><div class="wrap" id="nav"></div></nav>
+<main class="wrap" id="main"></main>
+
+<footer>English Log — SENA Training · Video Game Development and Interactive Environments</footer>
+
+<script>
+const PLAY = c => `<svg width="30" height="30" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" stroke="${c}" stroke-width="2"/><path d="M10 8l6 4-6 4V8z" fill="${c}"/></svg>`;
+
+const DATA = [
+{id:'l1',name:'Level 1',color:'var(--l1)',
+ lessons:[
+  {t:'Routine and study', s:[
+   ["I study English every day.","Estudio inglés todos los días."],
+   ["I practice speaking three times a week.","Practico hablar tres veces por semana."],
+   ["I usually start my English class at eight o'clock.","Normalmente comienzo mi clase de inglés a las ocho."],
+   ["I sometimes watch videos in English at night.","A veces veo videos en inglés por la noche."],
+   ["I always review new words before class.","Siempre repaso las palabras nuevas antes de clase."],
+   ["I rarely practice English on Sundays.","Rara vez practico inglés los domingos."],
+   ["I often listen to English songs.","A menudo escucho canciones en inglés."],
+   ["I never start my homework without reading the instructions.","Nunca comienzo mi tarea sin leer las instrucciones."]]},
+  {t:'The place where I live', video:{id:'CU6Y_n4_knA',label:'Tourist sites in Bogotá'}, s:[
+   ["I live in Bogotá, Colombia.","Vivo en Bogotá, Colombia."],
+   ["My neighborhood is quiet and friendly.","Mi barrio es tranquilo y agradable."],
+   ["There is a supermarket near my house.","Hay un supermercado cerca de mi casa."],
+   ["There are several parks in my neighborhood.","Hay varios parques en mi barrio."],
+   ["My house is close to a bus stop.","Mi casa está cerca de una parada de autobús."],
+   ["There are many stores around my neighborhood.","Hay muchas tiendas alrededor de mi barrio."],
+   ["I like the place where I live because it is convenient.","Me gusta el lugar donde vivo porque es conveniente."],
+   ["My favorite place is the park near my house.","Mi lugar favorito es el parque cerca de mi casa."]]},
+  {t:'What are you doing?', s:[
+   ["I am studying English right now.","Estoy estudiando inglés en este momento."],
+   ["I am working on my computer.","Estoy trabajando en mi computador."],
+   ["My brother is watching television.","Mi hermano está viendo televisión."],
+   ["My mother is cooking dinner.","Mi mamá está preparando la cena."],
+   ["I am learning how to develop video games.","Estoy aprendiendo a desarrollar videojuegos."],
+   ["My friends are playing a video game.","Mis amigos están jugando un videojuego."],
+   ["We are preparing a project for class.","Estamos preparando un proyecto para clase."],
+   ["I am listening to music while I study.","Estoy escuchando música mientras estudio."]]}
+ ]},
+{id:'l2',name:'Level 2',color:'var(--l2)',
+ lessons:[
+  {t:'At a restaurant', s:[
+   ["I am hungry, so I want to eat something.","Tengo hambre, así que quiero comer algo."],
+   ["I usually order chicken and rice.","Normalmente pido pollo y arroz."],
+   ["My favorite drink is orange juice.","Mi bebida favorita es el jugo de naranja."],
+   ["The restaurant has a large menu.","El restaurante tiene un menú grande."],
+   ["I would like a hamburger, please.","Quisiera una hamburguesa, por favor."],
+   ["The food is delicious.","La comida está deliciosa."],
+   ["How much is the chicken dish?","¿Cuánto cuesta el plato de pollo?"],
+   ["Can I have the menu, please?","¿Me puede dar el menú, por favor?"],
+   ["I don't like very spicy food.","No me gusta la comida muy picante."],
+   ["We are having dinner with our friends.","Estamos cenando con nuestros amigos."]]},
+  {t:'Learning routine', s:[
+   ["I study English every morning.","Estudio inglés todas las mañanas."],
+   ["I practice vocabulary every day.","Practico vocabulario todos los días."],
+   ["I study grammar twice a week.","Estudio gramática dos veces por semana."],
+   ["I practice pronunciation three times a week.","Practico pronunciación tres veces por semana."],
+   ["I often watch English videos.","A menudo veo videos en inglés."],
+   ["I sometimes speak English with my classmates.","A veces hablo inglés con mis compañeros."],
+   ["I usually study for two hours.","Normalmente estudio durante dos horas."],
+   ["I try to learn new words every day.","Intento aprender palabras nuevas todos los días."]]},
+  {t:'Traveling to another country', s:[
+   ["I want to travel around the world.","Quiero viajar por todo el mundo."],
+   ["I would like to visit Japan.","Me gustaría visitar Japón."],
+   ["I want to learn about different cultures.","Quiero aprender sobre diferentes culturas."],
+   ["I need to buy a plane ticket.","Necesito comprar un boleto de avión."],
+   ["I am packing my suitcase for the trip.","Estoy preparando mi maleta para el viaje."],
+   ["I need my passport to travel.","Necesito mi pasaporte para viajar."],
+   ["I am looking for a hotel near the airport.","Estoy buscando un hotel cerca del aeropuerto."],
+   ["I would like to visit famous places.","Me gustaría visitar lugares famosos."],
+   ["I want to try traditional food.","Quiero probar comida tradicional."],
+   ["Traveling helps me discover new cultures.","Viajar me ayuda a descubrir nuevas culturas."]]}
+ ]},
+{id:'l3',name:'Level 3',color:'var(--l3)',
+ lessons:[
+  {t:'Amazing facts', s:[
+   ["The Earth is the third planet from the Sun.","La Tierra es el tercer planeta desde el Sol."],
+   ["Some animals can sleep for several days.","Algunos animales pueden dormir durante varios días."],
+   ["The human brain controls many functions of the body.","El cerebro humano controla muchas funciones del cuerpo."],
+   ["Water covers most of the Earth's surface.","El agua cubre gran parte de la superficie de la Tierra."],
+   ["Some plants can live for hundreds of years.","Algunas plantas pueden vivir cientos de años."],
+   ["The Moon moves around the Earth.","La Luna se mueve alrededor de la Tierra."],
+   ["Light travels faster than sound.","La luz viaja más rápido que el sonido."],
+   ["Some insects can lift objects heavier than themselves.","Algunos insectos pueden levantar objetos más pesados que ellos mismos."]]},
+  {t:'What I like about technology', video:{id:'iCPIQSEtTAs',label:'Video game development — introduction'}, s:[
+   ["I like technology because it makes communication easier.","Me gusta la tecnología porque facilita la comunicación."],
+   ["I use my computer to study and work.","Uso mi computador para estudiar y trabajar."],
+   ["I like creating video games.","Me gusta crear videojuegos."],
+   ["Technology helps me learn new things.","La tecnología me ayuda a aprender cosas nuevas."],
+   ["I use the internet to find information.","Uso internet para encontrar información."],
+   ["I like artificial intelligence because it can help people learn.","Me gusta la inteligencia artificial porque puede ayudar a las personas a aprender."],
+   ["I use my phone to communicate with my friends.","Uso mi teléfono para comunicarme con mis amigos."],
+   ["Technology is an important part of modern life.","La tecnología es una parte importante de la vida moderna."]]},
+  {t:'What I have done in life', s:[
+   ["I have learned many new skills.","He aprendido muchas habilidades nuevas."],
+   ["I have studied different subjects.","He estudiado diferentes materias."],
+   ["I have worked on several projects.","He trabajado en varios proyectos."],
+   ["I have visited different places.","He visitado diferentes lugares."],
+   ["I have learned how to use a computer.","He aprendido a utilizar un computador."],
+   ["I have started learning English.","He comenzado a aprender inglés."],
+   ["I have made many new friends.","He hecho muchos amigos nuevos."],
+   ["I have learned from my mistakes.","He aprendido de mis errores."]]},
+  {t:'How things happened', s:[
+   ["Yesterday, I went to the supermarket.","Ayer fui al supermercado."],
+   ["I was studying when my friend called me.","Estaba estudiando cuando mi amigo me llamó."],
+   ["I finished my homework before I went to bed.","Terminé mi tarea antes de irme a dormir."],
+   ["I woke up late because I forgot to set my alarm.","Me desperté tarde porque olvidé poner la alarma."],
+   ["It started raining while I was walking home.","Empezó a llover mientras caminaba a casa."],
+   ["I arrived at school and started my class.","Llegué al colegio y comencé mi clase."],
+   ["My computer stopped working while I was doing my project.","Mi computador dejó de funcionar mientras hacía mi proyecto."],
+   ["After the problem happened, I looked for a solution.","Después de que ocurrió el problema, busqué una solución."]]}
+ ]},
+{id:'l4',name:'Level 4',color:'var(--l4)',
+ lessons:[
+  {t:'Going on vacation', s:[
+   ["I am going on vacation next month.","Me voy de vacaciones el próximo mes."],
+   ["I am going to visit the beach.","Voy a visitar la playa."],
+   ["I am going to travel with my family.","Voy a viajar con mi familia."],
+   ["I need to pack my clothes.","Necesito empacar mi ropa."],
+   ["I am going to take many pictures.","Voy a tomar muchas fotografías."],
+   ["We are going to stay in a hotel.","Nos vamos a quedar en un hotel."],
+   ["I want to relax and enjoy my vacation.","Quiero relajarme y disfrutar mis vacaciones."],
+   ["I hope the weather is good.","Espero que haga buen tiempo."],
+   ["We are going to visit different places.","Vamos a visitar diferentes lugares."],
+   ["I am excited about my vacation.","Estoy emocionado por mis vacaciones."]]},
+  {t:'What should I do?', s:[
+   ["You should study English every day.","Deberías estudiar inglés todos los días."],
+   ["You should practice speaking with other people.","Deberías practicar hablar con otras personas."],
+   ["You should drink more water.","Deberías beber más agua."],
+   ["You should get enough sleep.","Deberías dormir lo suficiente."],
+   ["You should save money for your trip.","Deberías ahorrar dinero para tu viaje."],
+   ["You should check your computer before starting the project.","Deberías revisar tu computador antes de comenzar el proyecto."],
+   ["You shouldn't use your phone while driving.","No deberías usar tu teléfono mientras conduces."],
+   ["You should ask for help when you have a problem.","Deberías pedir ayuda cuando tengas un problema."],
+   ["You should practice English out loud.","Deberías practicar inglés en voz alta."],
+   ["You shouldn't be afraid of making mistakes.","No deberías tener miedo de cometer errores."]]}
+ ]},
+{id:'extra',name:'Extra',color:'var(--extra)',
+ lessons:[
+  {t:'English interview practice', video:{id:'4bHRd8Eaxko',label:'English interview'}, s:[
+   ["This is practice for a real English interview.","Esta es una práctica para una entrevista de inglés real."],
+   ["I recorded myself to check my pronunciation.","Me grabé para revisar mi pronunciación."],
+   ["Practicing interviews helps me feel more confident.","Practicar entrevistas me ayuda a sentirme más seguro."]]}
+ ]}
+];
+
+const nav=document.getElementById('nav'), main=document.getElementById('main');
+DATA.forEach((lvl,i)=>{
+  const b=document.createElement('button');
+  b.textContent=lvl.name; b.style.background=i===0?lvl.color:''; b.className=i===0?'on':'';
+  b.style.setProperty('--c',lvl.color);
+  b.onclick=()=>show(lvl.id);
+  nav.appendChild(b);
+
+  const sec=document.createElement('section');
+  sec.className='level'; sec.id=lvl.id; sec.style.display=i===0?'block':'none';
+  let html=`<h2 style="color:${lvl.color}">${lvl.name}</h2><p class="sub">${lvl.lessons.length} topics · tap a card to reveal the translation</p>`;
+  lvl.lessons.forEach(les=>{
+    html+=`<div class="lesson" style="--c:${lvl.color}"><h3>${les.t}</h3>`;
+    if(les.video) html+=`<a class="vcard" style="--c:${lvl.color}" href="https://youtu.be/${les.video.id}" target="_blank" rel="noopener">${PLAY(lvl.color)}<span><b>${les.video.label}</b><span>Watch video</span></span></a>`;
+    html+=`<div class="grid">`;
+    les.s.forEach(([en,es])=>{
+      html+=`<div class="card" style="--c:${lvl.color}" onclick="this.classList.toggle('flip')">
+        <div class="inner">
+          <div class="face front">${en}<span class="lbl">EN</span></div>
+          <div class="face back">${es}<span class="lbl">ES</span></div>
+        </div></div>`;
+    });
+    html+=`</div></div>`;
+  });
+  sec.innerHTML=html;
+  main.appendChild(sec);
+});
+
+function show(id){
+  DATA.forEach(l=>document.getElementById(l.id).style.display=l.id===id?'block':'none');
+  [...nav.children].forEach((b,i)=>{b.className=DATA[i].id===id?'on':''; b.style.background=DATA[i].id===id?DATA[i].color:'';});
+}
+</script>
+</body>
+</html>
